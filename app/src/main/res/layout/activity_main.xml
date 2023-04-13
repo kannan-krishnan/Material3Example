@@ -43,7 +43,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginEnd="10dp"
-                android:hint="Name"
+                android:hint="Father Name"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
 
@@ -62,7 +62,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginEnd="10dp"
-                android:hint="Name"
+                android:hint="Mother Name"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
 
@@ -73,6 +73,43 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
             </com.google.android.material.textfield.TextInputLayout>
+
+            <!--gender-->
+            <RadioGroup
+
+                android:id="@+id/radioGroup1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="10dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/inputMName">
+
+                <RadioButton
+                    android:id="@+id/male"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Male" />
+
+                <RadioButton
+                    android:id="@+id/female"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Female" />
+
+                <RadioButton
+                    android:id="@+id/other"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Other" />
+            </RadioGroup>
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/inputDob"
@@ -85,7 +122,7 @@
                 app:layout_constraintHorizontal_weight="6"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toLeftOf="@+id/ageInput"
-                app:layout_constraintTop_toBottomOf="@id/inputMName">
+                app:layout_constraintTop_toBottomOf="@id/radioGroup1">
 
             </com.google.android.material.button.MaterialButton>
 
@@ -117,7 +154,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginEnd="10dp"
-                android:hint="Name"
+                android:hint="Email"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
 
@@ -125,6 +162,7 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/email"
+                    android:inputType="textEmailAddress"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -136,7 +174,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginEnd="10dp"
-                android:hint="Name"
+                android:hint="Phone"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
 
@@ -144,6 +182,7 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/mobile"
+                    android:inputType="phone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -155,7 +194,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginEnd="10dp"
-                android:hint="Name"
+                android:hint="What App"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
 
@@ -164,6 +203,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/whatapp"
                     android:layout_width="match_parent"
+                    android:inputType="number"
                     android:layout_height="wrap_content" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -174,7 +214,8 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginEnd="10dp"
-                android:hint="Name"
+                android:hint="Alternate Number"
+                android:maxLength="10"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
 
@@ -182,9 +223,118 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/alterNumber"
+                    android:inputType="number"
+                    android:maxLength="10"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
             </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputBus"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="10dp"
+                android:focusable="false"
+                android:hint="Select Bus"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/inputAlter">
+
+                <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                    android:id="@+id/bus_filled_exposed_dropdown"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:enabled="false"
+                    android:focusable="false" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputClass"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="10dp"
+                android:focusable="false"
+                android:hint="Select Class"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/inputBus">
+
+                <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                    android:id="@+id/class_exposed_dropdown"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:enabled="false"
+                    android:focusable="false" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="10dp"
+                android:hint="Address"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+
+                app:layout_constraintTop_toBottomOf="@+id/inputClass">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textMultiLine"
+                    android:lines="8"
+                    android:maxLines="10"
+                    android:minLines="6"
+                    android:scrollbars="vertical" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputPinCode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="10dp"
+                android:hint="Pin code"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+
+                app:layout_constraintTop_toBottomOf="@+id/inputAddress">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/pinCode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:maxLength="6"
+                    android:scrollbars="vertical" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/submit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="15dp"
+                android:padding="10dp"
+                android:text="Submit"
+                android:textSize="15sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/inputPinCode" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
